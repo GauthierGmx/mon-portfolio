@@ -227,6 +227,67 @@ section {
     margin-bottom: 10px;
 }
 
+/* Styles communs pour les tableaux de langues et softskills */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Style pour les conteneurs d'éléments */
+.item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style pour les images de drapeaux et softskills */
+.item-container img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.item-container p {
+    margin: 5px 0 0;
+    font-weight: 500;
+}
+
+.item-container .description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Style pour les passions */
+.passion-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.passion-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.passion-description {
+    line-height: 1.6;
+    color: #555;
+}
+
 /* Animation de transition */
 @keyframes fadeIn {
     from { opacity: 0; }
