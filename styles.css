@@ -1,0 +1,584 @@
+/* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #222; /* Fond sombre */
+    color: #fff;
+    padding: 15px 0;
+    position: relative;
+    top: auto;
+    width: 100%;
+    z-index: 1000; /* Assure qu'il reste au-dessus du contenu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Supprimer le header fixe */
+#main-header {
+    position: relative; /* Il ne reste plus fixe en haut */
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton de retour en haut */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #2ecc71; /* Vert pour rester en harmonie avec ton design */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Caché au départ */
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop.show {
+    display: flex;
+    opacity: 1;
+}
+
+#backToTop:hover {
+    background: #27ae60; /* Légèrement plus foncé au survol */
+    transform: scale(1.1);
+}
+
+/* Accessibilité : meilleure visibilité au focus */
+#backToTop:focus {
+    outline: 2px solid yellow;
+}
+
+
+/* Logo (Home) */
+.home {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Barre de navigation */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Liste de navigation */
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    display: flex;
+    gap: 20px; /* Espacement entre les liens */
+}
+
+/* Liens de navigation */
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-list a:hover {
+    background-color: #444; /* Effet au survol */
+    transform: scale(1.1); /* Effet de zoom léger */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list li {
+        flex-direction: column; /* Navigation verticale sur petits écrans */
+        align-items: center;
+    }
+
+    .nav-list a {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Styles pour les sections */
+section {
+    padding: 50px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Couleurs différentes pour chaque section */
+#about {
+    background-color: #3498db; /* Bleu */
+}
+
+#technologies {
+    background-color: #2ecc71; /* Vert */
+}
+
+#diploma_experiences {
+    background-color: #e74c3c; /* Rouge */
+}
+
+#project {
+    background-color: #f1c40f; /* Jaune */
+}
+
+#references {
+    background-color: #9b59b6; /* Violet */
+}
+
+#contact {
+    background-color: #34495e; /* Bleu foncé */
+}
+
+/* Section À propos de moi */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;   
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Conteneur de la photo */
+.photo-container {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.photo-container img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Section de contenu */
+.content-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Navigation par onglets */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #aaa;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    outline: none;
+}
+
+.tab-button.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.tab-button:hover:not(.active) {
+    background: #f0f0f0;
+}
+
+/* Contenu des onglets */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content p {
+    margin-bottom: 10px;
+}
+
+/* Animation de transition */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .photo-container {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .tab-navigation {
+        justify-content: center;
+    }
+}
+
+/* Container principal pour la section tech */
+.tech-section-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* tech container */
+.tech-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.tech-category {
+    margin-bottom: 35px;
+}
+
+.tech-category h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #0066b2;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+/* Grid pour les logos de technologies */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tech-item i {
+    font-size: 5rem; /* Taille de l'icône */
+    margin-bottom: 8px;
+    color: #0066b2; /* Couleur principale */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-item img {
+    margin-bottom: 8px;
+}
+
+.tech-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* CV preview */
+.cv-preview {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-preview a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #0066b2;
+    transition: transform 0.3s ease;
+}
+
+.cv-preview a:hover {
+    transform: scale(1.05);
+}
+
+.cv-preview img {
+    max-width: 100%;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.cv-preview span {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Tech icons - inchangé */
+.skills-icons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.skills-icons h3 {
+    margin-bottom: 20px;
+    color: #0066b2;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-section-container {
+        flex-direction: column;
+    }
+    
+    .skills-container, .cv-preview {
+        width: 100%;
+    }
+    
+    .cv-preview {
+        margin-top: 30px;
+    }
+}
+
+/* Styles pour les cartes de projet */
+.project {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    flex: 1 1 calc(50% - 40px); /* 50% width minus margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.project h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #3498db;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.project-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-icons i {
+    font-size: 3rem; /* Taille de l'icône */
+    margin-bottom: 8px;
+    color: #0066b2; /* Couleur principale */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-icons a {
+    font-size: 50px; /* Ajuste la taille du caractère Unicode */
+    display: inline-block; /* Permet de définir une largeur et une hauteur */
+    width: 50px;
+    height: 50px;
+    text-align: center; /* Centre le symbole à l'intérieur */
+    line-height: 50px; /* Centre verticalement */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Container for project cards */
+#project .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Alignement des titres */
+.section-titles {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.section-titles h2 {
+    text-align: center;
+    width: 45%;
+}
+
+/* Wrapper des timelines */
+.timeline-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Styles pour chaque container de timeline */
+.timeline-container {
+    width: 45%;
+}
+
+/* Styles de la timeline */
+.timeline {
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #333;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    top: 25px;
+    right: -10px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: scale(1.05);
+}
+
+.date {
+    font-weight: bold;
+    color: #555;
+}
+
+/** Footer **/
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+  .footer-icons {
+    margin-top: 15px;
+  }
+  
+  .footer-icons a {
+    margin: 0 15px;
+    display: inline-block;
+  }
+  
+  .footer-icons svg {
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+  }
+  
+  .footer-icons a:hover svg {
+    fill: #ccc;
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
