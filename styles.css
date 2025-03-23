@@ -786,11 +786,11 @@ footer {
     }
     
     .timeline-item::before {
-        left: 20px;
+        left: 0px;
         right: auto;
     }
     
     .timeline-item:nth-child(even)::before {
-        left: 20px;
+        left: 0px;
     }
 }
