@@ -33,3 +33,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Permet de gérer la pop-up
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("photoPopup");
+    const openPopupLink = document.querySelector("a#photoUsageLink");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Ouvrir la pop-up
+    openPopupLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        popup.style.display = "block";
+    });
+
+    // Fermer la pop-up
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Fermer la pop-up en cliquant à l'extérieur
+    window.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});

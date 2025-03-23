@@ -125,7 +125,10 @@ section {
     padding: 50px 20px;
     margin: 20px 0;
     border-radius: 10px;
-    color: #fff;
+}
+
+section h2 {
+    color: #ffffff;
 }
 
 /* Couleurs différentes pour chaque section */
@@ -156,20 +159,29 @@ section {
 /* Section À propos de moi */
 #about {
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;   
     margin: 50px auto;
     padding: 0 20px;
+    position: relative;
+}
+
+#about h2 {
+    position: absolute;
+    top: 0px; /* Ajustez cette valeur selon votre mise en page */
+    left: 20px;
+    margin: 0;
 }
 
 /* Conteneur de la photo */
 .photo-container {
-    width: 250px;
+    margin-top: 70px;
+    width: 350px;
     flex-shrink: 0;
 }
 
 .photo-container img {
     width: 100%;
+    height: 95%;
     border-radius: 5px;
     border: 1px solid #ddd;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -180,6 +192,9 @@ section {
 .content-container {
     flex: 1;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
 }
 
 /* Navigation par onglets */
@@ -188,6 +203,7 @@ section {
     gap: 10px;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tab-button {
@@ -225,6 +241,14 @@ section {
 
 .tab-content p {
     margin-bottom: 10px;
+}
+
+#presentation {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Styles communs pour les tableaux de langues et softskills */
@@ -363,6 +387,8 @@ section {
 }
 
 .tech-item img {
+    width: auto;
+    height: 80px;
     margin-bottom: 8px;
 }
 
@@ -490,21 +516,9 @@ section {
     gap: 10px;
 }
 
-.project-icons i {
-    font-size: 3rem; /* Taille de l'icône */
-    margin-bottom: 8px;
-    color: #0066b2; /* Couleur principale */
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.project-icons a {
-    font-size: 50px; /* Ajuste la taille du caractère Unicode */
-    display: inline-block; /* Permet de définir une largeur et une hauteur */
-    width: 50px;
-    height: 50px;
-    text-align: center; /* Centre le symbole à l'intérieur */
-    line-height: 50px; /* Centre verticalement */
-    text-decoration: none; /* Supprime le soulignement */
+.project-icons img{
+    width: auto;
+    height: 80px;
 }
 
 /* Container for project cards */
@@ -630,7 +644,9 @@ footer {
     display: inline-block;
   }
   
-  .footer-icons svg {
+  .footer-icons img {
+    width: auto;
+    height: 80px;
     fill: #ffffff;
     transition: fill 0.3s ease;
   }
@@ -642,4 +658,45 @@ footer {
   footer a {
     text-decoration: none;
   }
+
+  #photoUsageLink {
+    color: #ffffff;
+    text-decoration: underline;
+  }
   
+  /* Styles pour la pop-up */
+.popup {
+    display: none; /* Masquée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background: #fff;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
