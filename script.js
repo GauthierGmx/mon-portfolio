@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Permet de gérer la pop-up
 document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("photoPopup");
-    const openPopupLink = document.querySelector("a#photoUsageLink");
+    const openPopupLink = document.querySelector("a#photoUsageLink  ");
     const closeBtn = document.querySelector(".close-btn");
 
     // Ouvrir la pop-up
@@ -56,5 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === popup) {
             popup.style.display = "none";
         }
+    });
+});
+
+// Permet de gérer le menu burger
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navList = document.querySelector('.nav-list');
+    
+    burgerMenu.addEventListener('click', function() {
+        navList.classList.toggle('active');
+    });
+    
+    // Fermer le menu après avoir cliqué sur un lien
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', function() {
+            navList.classList.remove('active');
+        });
     });
 });
