@@ -724,6 +724,7 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    overflow: hidden; /* Empêche le débordement de l'écran */
 }
 
 .popup-content {
@@ -733,6 +734,8 @@ footer {
     background: #fff;
     width: 80%;
     max-width: 500px;
+    max-height: 80%; /* Limite la hauteur pour les petits écrans */
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -752,7 +755,6 @@ footer {
 }
 
 /* MODIFICATIONS POUR LE RESPONSIVE */
-
 /* Menu Burger pour mobile */
 @media (max-width: 768px) {
     .burger-menu {
@@ -897,5 +899,11 @@ footer {
     button[type="submit"] {
         padding: 1rem 2rem;
         font-size: 1.1rem;
+    }
+
+    /* Pop-up pour l'utilisation des images */
+    .popup-content {
+        width: 90%;
+        max-height: 80%; /* Réduit la hauteur pour les petits écrans */
     }
 }
