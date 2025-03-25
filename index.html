@@ -322,8 +322,26 @@
 
             <section id="contact">
                 <h2>CONTACT</h2>
-                <p>Alais de mail pour le contact : ggoumeaux_portfolio@outlook.fr</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Votre nom et prénom :</label>
+                        <input type="text" name="name" placeholder="DUPONT Jean" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="email">Votre email :</label>
+                        <input type="email" name="email" placeholder="dupont.jean@exemple.fr" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="message">Votre message :</label>
+                        <textarea name="message" placeholder="Votre message" required></textarea>
+                    </div>
+            
+                    <button type="submit">Envoyer</button>
+                </form>
             </section>
+            
         </main>
 
         <footer role="contentinfo">
@@ -384,6 +402,7 @@
             ↑
         </button>
 
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

@@ -75,3 +75,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Gestion de l'envoi du formulaire de contact avec EmailJS
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("_GsICEiBPbwzcYP0i"); // Remplace par ta clé publique EmailJS
+
+    const contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_jcea7hw", "template_enqgoul", this)
+                .then(() => {
+                    alert("Message envoyé avec succès !");
+                    contactForm.reset(); // Réinitialise le formulaire après l'envoi
+                })
+                .catch((err) => {
+                    alert("Une erreur s'est produite. Veuillez réessayer.");
+                    console.error("Erreur EmailJS :", err);
+                });
+        });
+    }
+});

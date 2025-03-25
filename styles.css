@@ -629,6 +629,49 @@ section h2 {
     color: #555;
 }
 
+/* Formulaire de contact */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.1rem;
+    color: white; /* Texte des labels en blanc */
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 100%; /* Assure que les éléments ne dépassent pas */
+}
+
+textarea {
+    height: 200px; /* Plus de place pour le textarea */
+}
+
+button[type="submit"] {
+    padding: 0.8rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
 /** Footer **/
 footer {
     background-color: #000000;
@@ -829,6 +872,7 @@ footer {
         left: 0px;
     }
 
+    /* Références en colonne */
     .reference-container {
         flex-direction: column;
     }
@@ -836,5 +880,22 @@ footer {
     .reference-item {
         width: 100%;
         max-width: 100%;
+    }
+
+    /* Formulaire de contact */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    button[type="submit"] {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
     }
 }
