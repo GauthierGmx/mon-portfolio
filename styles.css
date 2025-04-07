@@ -64,13 +64,17 @@ header {
 /* Barre de navigation */
 .main-nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 15px;
 }
 
 /* Liste de navigation */
 .nav-list {
     list-style: none;
+    display: flex; /* Assurez-vous que c'est un flex container */
+    margin: 0;
+    padding: 0
 }
 
 .nav-list li {
@@ -87,6 +91,7 @@ header {
     padding: 10px 15px;
     transition: all 0.3s ease-in-out;
     border-radius: 5px;
+    display: block;
 }
 
 .nav-list a:hover {
@@ -103,6 +108,7 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 21px;
+    z-index: 1000; /* S'assurer qu'il reste au-dessus */
 }
 
 .burger-menu .bar {
@@ -110,6 +116,7 @@ header {
     width: 100%;
     background-color: white;
     border-radius: 3px;
+    transition: all 0.3s ease-in-out; /* Pour l'animation */
 }
 
 /* Styles pour les sections */
@@ -798,15 +805,18 @@ footer {
     
     .nav-list {
         position: fixed;
-        right: -100%;
-        top: 70px;
+        right: -100%; /* Commence hors écran */
+        top: 70px; /* Ajustez selon la hauteur de votre header */
         flex-direction: column;
         background-color: #222;
         width: 100%;
+        height: calc(100vh - 70px); /* Prend toute la hauteur restante */
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         z-index: 999;
+        padding: 20px 0;
+        overflow-y: auto; /* Au cas où il y a beaucoup d'éléments */
     }
     
     .nav-list.active {
@@ -817,10 +827,32 @@ footer {
         flex-direction: column;
         margin: 0;
         padding: 10px 0;
+        width: 100%;
+        gap: 0; /* Réinitialiser le gap pour mobile */
     }
     
     .nav-list a {
-        margin: 5px 0;
+        margin: 5px auto;
+        width: 80%;
+        padding: 12px 15px; /* Agrandir la zone de toucher */
+    }
+
+    /* Animation du burger en X quand actif */
+    .burger-menu.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    /* Empêcher le défilement du body quand le menu est ouvert */
+    body.menu-open {
+        overflow: hidden;
     }
     
     /* Section À propos */

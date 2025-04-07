@@ -66,12 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     burgerMenu.addEventListener('click', function() {
         navList.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
     });
     
     // Fermer le menu après avoir cliqué sur un lien
     document.querySelectorAll('.nav-list a').forEach(link => {
         link.addEventListener('click', function() {
             navList.classList.remove('active');
+            burgerMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
         });
     });
 });
