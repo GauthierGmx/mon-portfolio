@@ -144,23 +144,26 @@ section h2 {
 
 /* Section À propos de moi */
 #about {
-    min-height: 800px;
+    min-height: 720px;
     display: flex;
-    gap: 30px;   
+    flex-direction: column;
     padding: 0 20px;
     position: relative;
 }
 
 #about h2 {
-    position: absolute;
-    top: 0px; /* Ajustez cette valeur selon votre mise en page */
-    left: 20px;
-    margin: 20px;
+    margin: 20px 0;
+    align-self: flex-start;
+}
+
+/* Disposition du contenu principal */
+.main-content {
+    display: flex;
+    gap: 30px;
 }
 
 /* Conteneur de la photo */
 .photo-container {
-    margin-top: 70px;
     width: 350px;
     flex-shrink: 0;
 }
